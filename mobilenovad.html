@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+       <script>
+            function validation()
+            {
+
+             var usernumber=document.getElementById("usernumber").value
+             if(usernumber=="")
+                    {
+                   document.getElementById("mbnumber").innerHTML=" please enter complete mobileno.";
+                   return false;
+                    }
+                 else if(isNaN(usernumber))
+                    {
+                   document.getElementById("mbnumber").innerHTML=" please enter no. in numberformat";
+                   return false;
+                    }  
+                else if(usernumber.length<10)
+                    {
+                   document.getElementById("mbnumber").innerHTML=" please enter complete mobileno. in proper format";
+                   return false;
+                    }
+                else if(usernumber.length>10)
+                    {
+                   document.getElementById("mbnumber").innerHTML=" please enter complete mobileno. in 10 proper format";
+                   return false;
+                    }
+                else if((usernumber.charAt(0)!=9) && (usernumber.charAt(0)!=8) && ( usernumber.charAt(0)!=7))
+                    {
+                   document.getElementById("mbnumber").innerHTML=" not valid";
+                   return false;
+                    }
+            }
+       
+       </script>
+    </head>
+    <body>
+        <form method="post" onsubmit="return validation()" autocomplete="off">  
+                <label > MOBILE NUMBER</label>
+                <input type="tel" id="usernumber" autofocus="on"><span id="mbnumber"></span>
+                <input type="submit" value="submit">
+                    </form>
+                                     </body>                                     
+</html>
